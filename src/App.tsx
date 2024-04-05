@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import "./App.scss";
 import { RepoInput } from "./components/RepoInput";
-import { Octokit } from "@octokit/core";
+// import { Octokit } from "@octokit/core";
 
 export const App: React.FC = () => {
   const [issues, setIssues] = useState<any[]>([]);
   const [error, setError] = useState(false);
 
-  const token = new Octokit({
-    auth: "",
-  });
+  // const token = new Octokit({
+  //   auth: "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",
+  // });
 
   const handleRepoSubmit = async (owner: string, repo: string) => {
     token
