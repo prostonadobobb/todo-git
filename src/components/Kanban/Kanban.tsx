@@ -57,7 +57,7 @@ export const Kanban: React.FC<Props> = ({ data, setData }) => {
     <DragDropContext onDragEnd={onDragEnd}>
       <div className="kanban">
         {data.map((section) => (
-          <Droppable key={section.id} droppableId={section.id}>
+          <Droppable key={section.id} droppableId={section.id} isCombineEnabled={false}>
             {(provided) => (
               <div
                 {...provided.droppableProps}
@@ -65,6 +65,7 @@ export const Kanban: React.FC<Props> = ({ data, setData }) => {
                 ref={provided.innerRef}
               >
                 <div className="kanban__section--title">{section.title}</div>
+
                 <div className="kanban__section--content">
                   {section.cards.map((card, index) => (
                     <Draggable
