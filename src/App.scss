@@ -1,37 +1,6 @@
 .App {
-  
   &__container {
     width: 1200px;
     margin: 50px auto;
-
-  }
-}
-
-.table {
-  margin-top: 50px;
-  display: flex;
-  justify-content: space-around;
-  gap: 30px;
-
-  &__column {
-    border: 2px solid grey;
-    border-radius: 10px;
-    width: 100%;
-    height: 100vh;
-
-    &--title {
-      text-align: center;
-      padding: 15px 0;
-      border-bottom: 2px solid grey;
-    }
-  }
-}
-
-.card {
-  border: 1px solid black;
-  margin: 15px;
-  &__row {
-    display: flex;
-    justify-content: space-around;
   }
 }

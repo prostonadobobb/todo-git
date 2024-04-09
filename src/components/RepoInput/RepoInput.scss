@@ -1,9 +1,13 @@
+@import '~bootstrap/scss/bootstrap';
+
 .input {
   width: 100%;
   margin-right: 20px;
 
+
   &__container {
     display: flex;
+    align-items: center;
   }
 
   &__label {

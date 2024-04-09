@@ -1,0 +1,20 @@
+.kanban {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
+
+
+  &__section {
+    width: 400px;
+    background-color: #fff;
+    border: 2px solid grey;
+    border-radius: 10px;
+    padding: 10px;
+
+    &--title {
+      text-align: center;
+      padding: 15px 0;
+      border-bottom: 2px solid grey;
+    }
+  }
+}
