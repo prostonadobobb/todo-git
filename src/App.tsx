@@ -11,7 +11,7 @@ export const App: React.FC = () => {
   const [error, setError] = useState(false);
 
   const token = new Octokit({
-    auth: "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",
+    auth: "",
   });
 
   const handleRepoSubmit = async (owner: string, repo: string) => {
