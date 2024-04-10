@@ -8,7 +8,6 @@ import { Kanban } from "./components/Kanban/Kanban";
 
 export const App: React.FC = () => {
   const [data, setData] = useState<Section[]>([]);
-  const [error, setError] = useState(false);
 
   const token = new Octokit({
     auth: "",
@@ -27,9 +26,16 @@ export const App: React.FC = () => {
       .then((response) => {
         const data = response.data;
 
-        const prepharedOpen = data.filter((card: Card) => card.state === "open"&& !card.assignee)
-        const prepharedInProgress = data.filter((card: Card) => card.state === "open" && card.assignee)
-        const prepharedClosed = data.filter((card: Card) => card.state === "closed")
+        const prepharedOpen = data
+          .filter((card: Card) => card.state === "open" && !card.assignee)
+        const prepharedInProgress = data
+          .filter((card: Card) => card.state === "open" && card.assignee)
+            .map((item: Card) => ({
+              ...item,
+              state: 'in progress'
+            }));
+        const prepharedClosed = data
+          .filter((card: Card) => card.state === "closed")
 
         const sortData = [
           {id: '1', title: 'Open', cards: prepharedOpen}, 
@@ -44,15 +50,12 @@ export const App: React.FC = () => {
       });
   };
 
-  console.log(data);
-
   return (
     <div className="App">
       <div className="App__container">
 
-        <div className="input">
-          <RepoInput onSubmit={handleRepoSubmit} setError={setError} />
-          {error && <div className="input__error">Не вірний URL!!!</div>}
+        <div className="inputField">
+          <RepoInput onSubmit={handleRepoSubmit}/>
         </div>
 
         <Kanban data={data} setData={setData} />

@@ -1,20 +1,27 @@
 .kanban {
   margin-top: 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20px;
+  user-select: 0;
 
+  &__title {
+    text-align: center;
+    font-family: "Tilt Neon", sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    padding: 15px 0;
+  }
 
   &__section {
-    width: 400px;
-    background-color: #fff;
-    border: 2px solid grey;
+    background-color: #ced4da2b; 
     border-radius: 10px;
     padding: 10px;
+    min-height: 175px;
+    width: 400px;
 
-    &--title {
-      text-align: center;
-      padding: 15px 0;
-      border-bottom: 2px solid grey;
-    }
+   &--card {
+    padding: 10px 0;
+   }
   }
 }

@@ -24,8 +24,11 @@ export const CardItem: React.FC<Props> = ({ card }) => {
   }
 
   return (
-    <div className="card" >
-      <div className="card__row">
+    <div className="card bg-light border-dark mb-0" >
+      <div className="card-header">{card.title}</div>
+      <div className="card-body">
+
+      <div className="card__info">
         <div className="card__number">{`#${card.number}`}</div>
         <div className="card__status">{card.state}</div>
         <div className="card_update">
@@ -33,11 +36,16 @@ export const CardItem: React.FC<Props> = ({ card }) => {
         </div>
       </div>
 
-      <div className="card__row">
+      <div className="card__info">
         <div className="card__type">{card.user.type}</div>
         <span>|</span>
         <div className="card__comments">{`Comments: ${card.comments}`}</div>
       </div>
+
+      </div>
+     
+
+
     </div>
   );
 };

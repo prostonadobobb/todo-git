@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon:XROT@2&display=swap');
+@import '~bootstrap/scss/bootstrap';
+
 .App {
   &__container {
     width: 1200px;
     margin: 50px auto;
+
   }
 }
+
+// .tilt-neon-<uniquifier> {
+//   font-family: "Tilt Neon", sans-serif;
+//   font-optical-sizing: auto;
+//   font-weight: 400;
+//   font-style: normal;
+//   font-variation-settings:
+//     "XROT" 2,
+//     "YROT" 0;
+// }

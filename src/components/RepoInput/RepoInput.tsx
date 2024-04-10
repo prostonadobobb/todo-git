@@ -4,31 +4,24 @@ import { Button, Form } from 'react-bootstrap';
 
 interface RepoInputProps  {
   onSubmit: (url: string, repo: string) => void,
-  setError: (error: boolean) => void,
 }
 
-export const RepoInput: React.FC<RepoInputProps> = ({ onSubmit, setError }) => {
+export const RepoInput: React.FC<RepoInputProps> = ({ onSubmit }) => {
   const [url, setUrl] = useState('');
   
   const handleButtonClick = () => {
-    setError(false);
     const repoCustomer = url
       .replace('https://github.com/', '')
       .split('/')
       .filter(item => item !== '');
 
-    if (repoCustomer.length === 2) {
       const [owner, repo] = repoCustomer;
       onSubmit(owner, repo);
-    } else {
-      setError(true);
-    }
   };
 
   return (
-    <div className="input__container">
-      <Form.Group className="input">
-      <Form.Label htmlFor="input" className="input__label">https://github.com/riktar/jkanban</Form.Label>
+    <div className="repoInput">
+      <Form.Group className="repoInput__group">
         <Form.Control
           id="input"
           type="text"
@@ -36,11 +29,15 @@ export const RepoInput: React.FC<RepoInputProps> = ({ onSubmit, setError }) => {
           value={url}
           onChange={(e) => setUrl(e.target.value)}
         />
-        <Form.Label htmlFor="input" className="input__label">https://github.com/prostonadobobb/digital-proj</Form.Label>
-        
+        <div className="repoInput__group--example">Example: https://github.com/prostonadobobb/digital-proj/</div>
       </Form.Group>
       <div className="button-group">
-        <Button variant="primary" onClick={handleButtonClick}>Завантажити</Button>
+        <Button 
+          className="btn btn-secondary" 
+          style={{ whiteSpace: 'nowrap' }}
+          onClick={handleButtonClick}>
+            Load issues
+          </Button>
       </div>
     </div>
   );

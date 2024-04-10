@@ -1,15 +1,14 @@
 .card {
-  padding: 30px;
-  background-color: #2121;
-  border: 1px solid black;
-  margin-top: 10px;
-
-  &__row {
+  font-family: "Tilt Neon", sans-serif;
+  // width: 100%;
+  
+  &__info {
     display: flex;
-    justify-content: space-around;
+    gap: 20px;
+  }
 
-    div + div{
-      margin-left: 10px;
-    }
+  &-header {
+    // font-weight: bold;
+    font-size: 23px;
   }
 }
