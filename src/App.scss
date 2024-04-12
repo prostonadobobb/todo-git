@@ -5,10 +5,12 @@
   &__container {
     width: 1200px;
     margin: 50px auto;
-
   }
 }
 
+.dataError {
+  color: red;
+}
 // .tilt-neon-<uniquifier> {
 //   font-family: "Tilt Neon", sans-serif;
 //   font-optical-sizing: auto;
