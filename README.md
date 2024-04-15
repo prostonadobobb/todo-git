@@ -1,5 +1,5 @@
 Follow to link: 
-[LINK] (https://prostonadobobb.github.io/todo-git/)
+[LINK](https://prostonadobobb.github.io/todo-git/)
 
 The application was created using React + TS.
 
