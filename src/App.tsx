@@ -15,8 +15,6 @@ export const App: React.FC = () => {
     userProfileURL = userProjectUrl.split("/")[3];
   }
 
-  console.log(userProfileURL);
-
   return (
     <div className="App">
       <div className="App__container">
